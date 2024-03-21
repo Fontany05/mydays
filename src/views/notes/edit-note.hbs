@@ -1,0 +1,30 @@
+<section class="sec-edit">
+<div class="container" id="cont-edit">
+<div class="box animate__bounce" id="tiles">
+    <form action="/notes/edit-note/{{note._id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    
+    <div class="field">
+    <h3 class="title-field"> Editar nota</h3>
+    <label class="label">Titulo</label>
+    <div class="control">
+    <input class="input" type="text"  name="title" value="{{note.title}}">
+    </div>
+</div>
+
+<div class="field">
+<div class="control">
+    <label class="label">Tarea</label>
+    <textarea class="textarea" name="task">{{note.task}}</textarea>
+</div>
+</div>
+<div class="field">
+<div class="control">
+    <button class="button is-fullwidth" type="submit"> 
+        Guardar
+    </button>
+</div>  
+</form>
+</div>
+</div>
+</section>

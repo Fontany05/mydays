@@ -1,0 +1,88 @@
+<section class="dashb">
+<div class="container" id="contenedor">
+  <div id="tiles">
+    <form action="/notes/new-note" method="post">
+      <div class="field">
+        <h3 class="title-field"> Nueva nota</h3>
+        <label class="label">Titulo</label>
+        <div class="control">
+          <input class="input" type="text" name="title" placeholder="titulo">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Tarea</label>
+        <div class="control">
+          <textarea class="textarea" name="task" placeholder="tarea"></textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-fullwidth" type="submit"> Crear </button>
+        </div>
+         </div>
+    </form>
+    </div>
+    <section class="sec-calen">
+  <div class="div-calendar">
+    <header>
+      <p class="p-date"></p>
+      <div class="icons">
+        <span id="prev"><i class='bx bx-chevron-left'></i></span>
+        <span id="next"><i class='bx bx-chevron-right'></i></span>
+      </div>
+    </header>
+    <div class="calendar">
+      <ul class="weeks">
+        <li>Dom</li>
+        <li>Lun</li>
+        <li>Mar</li>
+        <li>Mie</li>
+        <li>Jue</li>
+        <li>Vie</li>
+        <li>Sab</li>
+      </ul>
+      <ul class="days">
+      </ul>
+    </div>
+  </div>
+</section>
+  </div>
+  <section class="sec-anun">
+  <div class="container" id="anuncios">
+    {{#each notes}}
+    <div class="card">
+      <div class="card-content">
+        <div class="title-cards">
+          <a href="/notes/edit/{{_id}}">
+            <i class='bx bx-pencil'></i></a>
+          <h4>
+            {{title}}
+          </h4>
+        </div>
+        <p class="p-task">{{ task }}</p>
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="button is-fullwidth is-danger" type="submit" id="btn-trash"><i
+              class='bx bx-trash'></i></button>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+    </section> 
+</section>
+<!--calendar.js-->
+<script src="/js/calendar.js"></script>
+
+<script>
+  //alertas de new-note.hbs(cerrar alerta)
+  document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
+
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    });
+  });
+</script>
