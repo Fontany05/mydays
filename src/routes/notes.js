@@ -8,6 +8,15 @@ router.get("/notes/add", isAuthenticated, (req, res) => {
   res.render("notes/new-note");
 });
 
+
+//mostrar todas las notas(cards) en el dashboard
+router.get("/dashboard", isAuthenticated, async (req, res) => {
+  const notes = await Note.find({user: req.user.id}).lean().sort({ date: "desc" });
+  res.render("./notes/all-notes", { notes });
+});
+
+
+
 router.post("/notes/new-note", async (req, res) => {
   const { title, task } = req.body;
   const errors = [];
@@ -28,7 +37,7 @@ router.post("/notes/new-note", async (req, res) => {
     newNote.user = req.user.id;
     await newNote.save();
     req.flash("success_msg", "nota agregada con exito");
-    res.redirect("/notes");
+    res.redirect("/dashboard");
   }
 });
 
@@ -37,6 +46,8 @@ router.get("/notes", isAuthenticated, async (req, res) => {
   const notes = await Note.find({user: req.user.id}).lean().sort({ date: "desc" });
   res.render("./notes/new-note", { notes });
 });
+
+
 
 router.get("/notes/edit/:id", isAuthenticated, async (req, res) => {
   const note = await Note.findById(req.params.id).lean();
@@ -51,17 +62,17 @@ router.put("/notes/edit-note/:id", isAuthenticated, async (req, res) => {
   const { title, task } = req.body;
   await Note.findByIdAndUpdate(req.params.id, { title, task });
   req.flash("success_msg", "nota actualizada con exito");
-  res.redirect("/notes");
+  res.redirect("/dashboard");
 });
 
 router.delete("/notes/delete/:id", isAuthenticated, async (req, res) => {
   await Note.findByIdAndDelete(req.params.id);
   if(Note.user != req.user.id){
     req.flash('error_msg', 'no autorizado');
-    res.redirect("/notes");
+    res.redirect("/dashboard");
   }else{      
   req.flash("success_msg", "nota eliminada con exito");
-  res.redirect("/notes");
+  res.redirect("/dashboard");
   }
 });
 
