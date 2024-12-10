@@ -48,29 +48,7 @@
   </div>
 </section>
   </div>
-  <section class="sec-anun">
-  <div class="container" id="anuncios">
-    {{#each notes}}
-    <div class="card">
-      <div class="card-content">
-        <div class="title-cards">
-          <a href="/notes/edit/{{_id}}">
-            <i class='bx bx-pencil'></i></a>
-          <h4>
-            {{title}}
-          </h4>
-        </div>
-        <p class="p-task">{{ task }}</p>
-        <form action="/notes/delete/{{_id}}?_method=DELETE" method="post">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="button is-fullwidth is-danger" type="submit" id="btn-trash"><i
-              class='bx bx-trash'></i></button>
-        </form>
-      </div>
-    </div>
-    {{/each}}
-    </section> 
-</section>
+ 
 <!--calendar.js-->
 <script src="/js/calendar.js"></script>
 
