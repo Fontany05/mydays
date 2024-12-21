@@ -14,8 +14,8 @@ App-web para gestionar distintas notas de un usuario,cada usuario puedo crear y 
 ### funcionalidad
 - creacion de sesiones y cierre de las mismas
 - Autenticacion y validacion de datos
--  Creacion de schemas de datos(json)
-- conexion a la bdd
+-  Creacion de schemas de datos
+- conexion a la bdd mongo
 - aseguramiento de rutas.
 - métodos de petición HTTP.
 - Implementacion de modulos y dependencias.
@@ -23,7 +23,7 @@ App-web para gestionar distintas notas de un usuario,cada usuario puedo crear y 
 ## Tecnologias
 
 #### Frontend
-Handlebars/css/js/
+html/Handlebars/css/js/
 ##### framework css
 Bulma
 
@@ -47,7 +47,9 @@ Postman
 
 ## Capturas de la App
 ![](https://i.pinimg.com/736x/66/88/27/668827de03082cea18d03bc5960a2a60.jpg)
-![](https://i.pinimg.com/736x/58/e6/fa/58e6fad1f8006bf216d7ba574939d883.jpg)
+![]([https://i.pinimg.com/736x/58/e6/fa/58e6fad1f8006bf216d7ba574939d883.jpg](https://ar.pinterest.com/pin/761741724508629568/))
 ![](https://i.pinimg.com/originals/8d/18/f1/8d18f1550ef222bce5fb8151e802bff0.png)
+![]([https://i.pinimg.com/originals/8d/18/f1/8d18f1550ef222bce5fb8151e802bff0.png](https://ar.pinterest.com/pin/761741724508629567/))
+
 
 
