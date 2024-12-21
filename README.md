@@ -47,9 +47,9 @@ Postman
 
 ## Capturas de la App
 ![](https://i.pinimg.com/736x/66/88/27/668827de03082cea18d03bc5960a2a60.jpg)
-![]([https://i.pinimg.com/736x/58/e6/fa/58e6fad1f8006bf216d7ba574939d883.jpg](https://ar.pinterest.com/pin/761741724508629568/))
+![]([[https://i.pinimg.com/736x/58/e6/fa/58e6fad1f8006bf216d7ba574939d883.jpg)
 ![](https://i.pinimg.com/originals/8d/18/f1/8d18f1550ef222bce5fb8151e802bff0.png)
-![]([https://i.pinimg.com/originals/8d/18/f1/8d18f1550ef222bce5fb8151e802bff0.png](https://ar.pinterest.com/pin/761741724508629567/))
+![]([https://i.pinimg.com/originals/8d/18/f1/8d18f1550ef222bce5fb8151e802bff0.png)
 
 
 
